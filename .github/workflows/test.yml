@@ -31,6 +31,17 @@ jobs:
       shell: bash
       run: python -m build producer
 
+
+    - name: Build consumer
+      shell: bash
+      run: |
+        python -m pip --disable-pip-version-check install producer/dist/*.whl
+        python -m pip --disable-pip-version-check install robotpy-build @ git+https://github.com/robotpy/robotpy-build.git@new-smart-holder
+
+    - name: Build sdist + wheel
+      shell: bash
+      run: python -m build -n consumer
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
