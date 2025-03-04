@@ -21,22 +21,26 @@ jobs:
 
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.11
+        python-version: 3.12
 
-    - name: Install build
-      shell: bash
-      run: python -m pip --disable-pip-version-check install build
+    # - name: Install build
+    #   shell: bash
+    #   run: python -m pip --disable-pip-version-check install build
 
-    - name: Build sdist + wheel
-      shell: bash
-      run: python -m build producer
+    # - name: Build sdist + wheel
+    #   shell: bash
+    #   run: python -m build producer
 
 
-    - name: Build consumer
+    - name: Install consumer dependencies
       shell: bash
       run: |
-        python -m pip --disable-pip-version-check install producer/dist/*.whl
         python -m pip --disable-pip-version-check install git+https://github.com/robotpy/robotpy-build.git@new-smart-holder wheel
+
+    - name: Install producer
+      shell: bash
+      run: |
+        python -m pip --disable-pip-version-check install wheel/demo_producer-0.1.dev6+g7e0b5d0-cp312-cp312-win_amd64.whl
 
     - name: Build sdist + wheel
       shell: bash
