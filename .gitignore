@@ -1,0 +1,14 @@
+*.py[cdio]
+*.so
+*.dll
+*.egg-info
+
+_init_*.py
+py.typed
+
+pkgcfg.py
+version.py
+rpy-include
+
+build
+dist

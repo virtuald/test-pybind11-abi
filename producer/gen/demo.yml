@@ -1,0 +1,9 @@
+---
+
+classes:
+  DemoClass:
+    attributes:
+      m_x:
+    methods:
+      setX:
+      getX:

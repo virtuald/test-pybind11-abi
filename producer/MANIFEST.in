@@ -1,0 +1,2 @@
+include rpydemo/include/*
+include gen/*
