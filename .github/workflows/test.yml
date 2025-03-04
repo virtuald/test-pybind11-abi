@@ -35,7 +35,7 @@ jobs:
     - name: Install consumer dependencies
       shell: bash
       run: |
-        python -m pip --disable-pip-version-check install git+https://github.com/robotpy/robotpy-build.git@new-smart-holder wheel
+        python -m pip --disable-pip-version-check install build git+https://github.com/robotpy/robotpy-build.git@new-smart-holder wheel
 
     - name: Install producer
       shell: bash
